@@ -7,7 +7,7 @@ This application will take in a word entered by a user and will hide the word wh
 
 ### Wireframe
 
-![Hangman wireframe](https://i.imgur.com/RE4q2I8.png)
+![Hangman wireframe](https://i.imgur.com/THKD4Wu.png)
 
 ### MVP
 Application must allow user to input a word to be guessed, guess letters, and display an image showing the progression of guesses throughout the game. The most basic program should also indicate how many letters the word contains, and populate the blanks when the user has guessed letters correctly.
