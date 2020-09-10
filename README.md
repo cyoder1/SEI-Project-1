@@ -7,7 +7,7 @@ This application will take in a word endered by a user and will hide the word wh
 
 ### Wireframe
 
-!(wireframe)[https://i.imgur.com/RE4q2I8.png]
+![Hangman wireframe](https://i.imgur.com/RE4q2I8.png)
 
 ### MVP
 Application must allow user to input a word to be guessed, guess letters, and display an image showing the progression of guesses throughout the game. 
