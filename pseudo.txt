@@ -1,0 +1,20 @@
+PseudoCode
+
+HTML
+-INPUT box for word to be used
+-CREATE blanks for the number of characters of guessing word
+-CREATE hangman gallows image(s)
+
+CSS
+-STYLE text of program
+-STYLE/ section the page in a clean way
+
+JS
+-TAKE IN user word to be guessed
+-LISTEN for button clicks
+-DISPLAY blanks for word to guess
+-HANDLE user guessed letters
+-DISPLAY wrong guessed letters
+-INSERT correctly guessed letters into the blanks
+-DEVELOP logic for hangman display -> DOM MANIPULATION
+-HANDLE user guessed letters
