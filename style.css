@@ -9,3 +9,6 @@ body {
 .let {
     background-color: white;
 }
+.pic {
+    display: inline-block;
+}
