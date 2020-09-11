@@ -1,4 +1,5 @@
 let guessWord;
+let compWord;
 let submitBtn = document.querySelector('#submit-btn');
 let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let letterContainer = document.querySelector('.guess');
@@ -36,9 +37,11 @@ function changeBlank(letter) {
     console.log(guessWord);
     console.log(letter);
     if (guessWord.includes(letter) === true) {
-        let place = (guessWord.indexOf(letter))*2;
-        let before = holder.slice(0, (place-1));
-        let after = holder.slice((place), ((guessWord.length*2)-2));
+        let blankPlace = (guessWord.indexOf(letter))*2;
+        let before = ""; 
+        before = holder.slice(0, (blankPlace));
+        let after = holder.slice((blankPlace), ((guessWord.length*2)-2));
+        console.log(blankPlace);
         console.log(before);
         console.log(after);
         holder = (before + " " +letter + " " + after);
