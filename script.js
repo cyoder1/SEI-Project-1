@@ -20,7 +20,6 @@ for (let i = 0; i <= 25 ; i++) {
 submitBtn.addEventListener('click', function() {
     guessWord = document.querySelector('#user-word').value;
     guessWord = guessWord.toUpperCase();
-    console.log(guessWord.length);
     spaces = guessWord.length;
     // let holder = "";
     for (let j = spaces; j>0 ; j--) {
@@ -28,25 +27,26 @@ submitBtn.addEventListener('click', function() {
     }
     document.querySelector('#blanks').innerText = holder;
     document.querySelector('#user-word').value = '';
-    console.log(guessWord);
 })
 
 
 
 function changeBlank(letter) {
-    console.log(guessWord);
-    console.log(letter);
+    let use = letter;
     if (guessWord.includes(letter) === true) {
         let blankPlace = (guessWord.indexOf(letter))*2;
-        let before = ""; 
-        before = holder.slice(0, (blankPlace));
-        let after = holder.slice((blankPlace), ((guessWord.length*2)-2));
+        let letterPlace = guessWord.indexOf(letter);
+        let before = holder.slice(0, (blankPlace));
+        let after = holder.slice((blankPlace+1), ((guessWord.length*2)));
         console.log(blankPlace);
         console.log(before);
         console.log(after);
-        holder = (before + " " +letter + " " + after);
+        holder = (before +  letter  + after);
         document.querySelector('#blanks').innerText = holder;
-        
+        guessWord = ((guessWord.slice(0, (letterPlace))) + "*" + (guessWord.slice((letterPlace+1), (guessWord.length))));
+        console.log(guessWord);
+        changeBlank(use);
+        return
     }
 }
 
