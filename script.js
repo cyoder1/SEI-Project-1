@@ -1,4 +1,5 @@
 let guessWord;
+let gate;
 let compWord;
 let submitBtn = document.querySelector('#submit-btn');
 let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -8,6 +9,7 @@ let screenBlanks = document.querySelector('#blanks');
 let holder = "";
 let wrongGuess = 0;
 let hangMan = document.querySelector('#pic');
+let subClicks = 0;
 
 let missedGuess = [``,
 `\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0==========
@@ -119,15 +121,19 @@ for (let i = 0; i <= 25 ; i++) {
 }
 
 submitBtn.addEventListener('click', function() {
+    if (subClicks < 1) {
     guessWord = document.querySelector('#user-word').value;
     guessWord = guessWord.toUpperCase();
+    gate = document.querySelector('#user-word').value;
+    gate= guessWord.toUpperCase();
     spaces = guessWord.length;
-    // let holder = "";
+    subClicks ++;
     for (let j = spaces; j>0 ; j--) {
         holder =holder + ('_ ')
     }
     document.querySelector('#blanks').innerText = holder;
     document.querySelector('#user-word').value = '';
+    }
 })
 
 
@@ -148,7 +154,7 @@ function changeBlank(letter) {
         console.log(guessWord);
         changeBlank(use);
         return
-    } else {
+    } else if (gate.includes(letter) === false) {
         wrongGuess ++;
         document.querySelector('#pic').innerText = missedGuess[wrongGuess];
     }
