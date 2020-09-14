@@ -13,6 +13,7 @@ let subClicks = 0;
 let reset = document.querySelector('#reset-btn');
 let missed = '';
 let spaceCount = 0;
+let words = 1;
 
 
 let missedGuess = [``,
@@ -112,7 +113,7 @@ let missedGuess = [``,
 \xa0\xa0||\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\\\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0||
 \xa0\xa0||\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\\\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0||`]
 
-
+console.log(missedGuess.length);
 
 for (let i = 0; i <= 25 ; i++) {
     let letter = alphabet[i];
@@ -121,6 +122,7 @@ for (let i = 0; i <= 25 ; i++) {
     newButton.appendChild(btnVal);
     newButton.addEventListener('click', function() {changeBlank(alphabet[i])});
     newButton.setAttribute("class", "let");
+    newButton.setAttribute("id", alphabet[i]);
     letterContainer.appendChild(newButton);
 }
 
@@ -135,7 +137,9 @@ submitBtn.addEventListener('click', function() {
     for (let j = spaces; j>0 ; j--) {
         holder =holder + ('_ ');
     }
-    changeBlank(" ");
+    if (guessWord.includes(" ") === true) {
+        changeBlank(" "); 
+    }
     document.querySelector('#blanks').innerText = holder;
     document.querySelector('#user-word').value = '';
     }
@@ -145,11 +149,15 @@ submitBtn.addEventListener('click', function() {
 
 function changeBlank(letter) {
     let use = letter;
+    document.querySelector(`#${letter}`).removeEventListener('click');
+    // c.style.background = ('red');
     if (guessWord.includes(" ") === true) {
+        words++;
         let blankPlace = (guessWord.indexOf(" "))*2;
         let letterPlace = guessWord.indexOf(" ");
         let before = holder.slice(0, (blankPlace));
         let after = holder.slice((blankPlace+1), ((guessWord.length*2)));
+        document.querySelector('.message p').innerText = words + " words";
         console.log(blankPlace);
         console.log(before);
         console.log(after);
@@ -172,15 +180,20 @@ function changeBlank(letter) {
         console.log(guessWord);
         changeBlank(use);
         if (holder.includes("_") === false) {
-            setTimeout(function() { alert("YOU WON!!!!"); }, 300);
+            document.querySelector('.message p').innerText ="YOU WON!!!";
         }
         return
     } else if (gate.includes(letter) === false) {
-        wrongGuess ++;
+        if (wrongGuess < 8) {
+            wrongGuess ++;
         document.querySelector('#pic').innerText = missedGuess[wrongGuess];
         missed = missed + letter + " ";
         document.querySelector('#missed-letters').innerText = missed;
+        if (wrongGuess === 8) {
+            document.querySelector('.message p').innerText ="GAME OVER";
+        }
     }
+}
 }
 
 reset.addEventListener('click', function(){
@@ -192,5 +205,6 @@ reset.addEventListener('click', function(){
     holder = '';
     missed = '';
     document.querySelector('#missed-letters').innerText = '';
+    words = 1;
 })
 
