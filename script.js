@@ -10,6 +10,7 @@ let holder = "";
 let wrongGuess = 0;
 let hangMan = document.querySelector('#pic');
 let subClicks = 0;
+let reset = document.querySelector('#reset-btn');
 
 let missedGuess = [``,
 `\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0==========
@@ -160,4 +161,12 @@ function changeBlank(letter) {
     }
 }
 
+reset.addEventListener('click', function(){
+    document.querySelector('#pic').innerText = "";
+    wrongGuess = 0;
+    subClicks = 0;
+    guessWord='';
+    document.querySelector('#blanks').innerText = "";
+    holder = '';
+})
 
