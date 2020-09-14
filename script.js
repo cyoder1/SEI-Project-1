@@ -16,6 +16,7 @@ let spaceCount = 0;
 let words = 1;
 let timer = 60;
 let score = 0;
+let counter;
 
 let missedGuess = [``,
 `\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0==========
@@ -144,7 +145,7 @@ submitBtn.addEventListener('click', function() {
     }
     document.querySelector('#blanks').innerText = holder;
     document.querySelector('#user-word').value = '';
-    setInterval(function() {
+    counter = setInterval(function() {
         if (timer > 0) {
             document.querySelector('#timer').innerText = timer; 
             timer --;
@@ -190,7 +191,7 @@ function changeBlank(letter) {
             let set = timer;
             timer = 0;
             if (set > 0) {
-                Math.round(score) = parseInt(score) + (10 + ((Math.round(parseInt(set)))*.1))
+                score = Math.round(parseInt(score) + (10 + ((Math.round(parseInt(set)))*.1)));
                 document.querySelector('#score').innerText = "Score: " + score;
             } else {
                 score = parseInt(score) + 5;
@@ -226,5 +227,6 @@ reset.addEventListener('click', function(){
     }
     makeButtons();
     timer = 60;
+    clearInterval(counter);
 })
 
