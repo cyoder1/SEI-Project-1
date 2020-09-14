@@ -12,6 +12,8 @@ let hangMan = document.querySelector('#pic');
 let subClicks = 0;
 let reset = document.querySelector('#reset-btn');
 let missed = '';
+let spaceCount = 0;
+
 
 let missedGuess = [``,
 `\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0==========
@@ -131,8 +133,9 @@ submitBtn.addEventListener('click', function() {
     spaces = guessWord.length;
     subClicks ++;
     for (let j = spaces; j>0 ; j--) {
-        holder =holder + ('_ ')
+        holder =holder + ('_ ');
     }
+    changeBlank();
     document.querySelector('#blanks').innerText = holder;
     document.querySelector('#user-word').value = '';
     }
@@ -142,7 +145,20 @@ submitBtn.addEventListener('click', function() {
 
 function changeBlank(letter) {
     let use = letter;
-    if (guessWord.includes(letter) === true) {
+    if (guessWord.includes(" ") === true) {
+        let blankPlace = (guessWord.indexOf(" "))*2;
+        let letterPlace = guessWord.indexOf(" ");
+        let before = holder.slice(0, (blankPlace));
+        let after = holder.slice((blankPlace+1), ((guessWord.length*2)));
+        console.log(blankPlace);
+        console.log(before);
+        console.log(after);
+        holder = (before +  "\xa0"  + after);
+        document.querySelector('#blanks').innerText = holder;
+        guessWord = ((guessWord.slice(0, (letterPlace))) + "*" + (guessWord.slice((letterPlace+1), (guessWord.length))));
+        console.log(guessWord);
+        changeBlank(use);
+    } else if (guessWord.includes(letter) === true) {
         let blankPlace = (guessWord.indexOf(letter))*2;
         let letterPlace = guessWord.indexOf(letter);
         let before = holder.slice(0, (blankPlace));
