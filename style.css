@@ -3,14 +3,14 @@ body {
     display: flex;
     /* flex-direction: column; */
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .guess {
     width: 180px;
     text-align: center;
     float: right;
-    background-color: red;
+    /* background-color: red; */
     align-self: flex-end;
     
 }
@@ -36,7 +36,7 @@ h1{
 .display {
     margin: 0px 5%;
     width: 185px;
-    background-color: purple;
+    /* background-color: purple; */
 }
 #input{
     display: flex;
@@ -45,7 +45,8 @@ h1{
     display: inline-block;
     padding: 10px;
     text-align: center;
-    background-color: blue
+    /* background-color: blue; */
+    height: 350px;
 }
 #blanks {
     text-align: center;
