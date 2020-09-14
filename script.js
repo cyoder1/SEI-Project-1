@@ -154,6 +154,9 @@ function changeBlank(letter) {
         guessWord = ((guessWord.slice(0, (letterPlace))) + "*" + (guessWord.slice((letterPlace+1), (guessWord.length))));
         console.log(guessWord);
         changeBlank(use);
+        if (holder.includes("_") === false) {
+            setTimeout(function() { alert("YOU WON!!!!"); }, 300);
+        }
         return
     } else if (gate.includes(letter) === false) {
         wrongGuess ++;
