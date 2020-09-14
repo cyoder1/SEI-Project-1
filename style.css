@@ -20,11 +20,11 @@ body {
 .pic {
     display: inline-block;
 }
-#submit-btn, #reset-btn {
-    width: 100px;
+#submit-btn, #reset-btn, #resetScore-btn{
+    width: 120px;
     padding: 10px;
     margin: 10px;
-    font-size: 20px;
+    font-size: 12px;
 }
 #user-word {
     width: 220px;

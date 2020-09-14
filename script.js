@@ -11,6 +11,7 @@ let wrongGuess = 0;
 let hangMan = document.querySelector('#pic');
 let subClicks = 0;
 let reset = document.querySelector('#reset-btn');
+let resetScore = document.querySelector('#resetScore-btn');
 let missed = '';
 let spaceCount = 0;
 let words = 1;
@@ -230,3 +231,7 @@ reset.addEventListener('click', function(){
     clearInterval(counter);
 })
 
+resetScore.addEventListener('click', function(){
+    score = 0;
+    document.querySelector('#score').innerText = "Score: ";
+})
