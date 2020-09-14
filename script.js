@@ -113,8 +113,7 @@ let missedGuess = [``,
 \xa0\xa0||\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\\\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0||
 \xa0\xa0||\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\\\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0||`]
 
-console.log(missedGuess.length);
-
+function makeButtons(){
 for (let i = 0; i <= 25 ; i++) {
     let letter = alphabet[i];
     let newButton = document.createElement('button');
@@ -125,6 +124,8 @@ for (let i = 0; i <= 25 ; i++) {
     newButton.setAttribute("id", alphabet[i]);
     letterContainer.appendChild(newButton);
 }
+}
+makeButtons();
 
 submitBtn.addEventListener('click', function() {
     if (subClicks < 1) {
@@ -149,8 +150,7 @@ submitBtn.addEventListener('click', function() {
 
 function changeBlank(letter) {
     let use = letter;
-    document.querySelector(`#${letter}`).removeEventListener('click');
-    // c.style.background = ('red');
+    document.querySelector(`#${letter}`).disabled = true;
     if (guessWord.includes(" ") === true) {
         words++;
         let blankPlace = (guessWord.indexOf(" "))*2;
@@ -206,5 +206,9 @@ reset.addEventListener('click', function(){
     missed = '';
     document.querySelector('#missed-letters').innerText = '';
     words = 1;
+    for (let j = 0 ; j<= alphabet.length ; j++){
+    letterContainer.removeChild(letterContainer.lastElementChild);
+    }
+    makeButtons();
 })
 
