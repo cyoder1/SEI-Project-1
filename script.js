@@ -235,6 +235,7 @@ reset.addEventListener('click', function(){
     timer = 60;
     document.querySelector('#timer').innerText = timer;
     clearInterval(counter);
+    document.querySelector('.message p').innerText = "";
 })
 
 resetScore.addEventListener('click', function(){
