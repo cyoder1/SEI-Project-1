@@ -132,6 +132,8 @@ makeButtons();
 
 submitBtn.addEventListener('click', function() {
     if (subClicks < 1) {
+    let check = /^[a-zA-Z ]*$/;
+    if (check.test(document.querySelector('#user-word').value) === true){   
     guessWord = document.querySelector('#user-word').value;
     guessWord = guessWord.toUpperCase();
     gate = document.querySelector('#user-word').value;
@@ -152,7 +154,10 @@ submitBtn.addEventListener('click', function() {
             timer --;
         }
     },1000);
+    } else {
+        document.querySelector('.message p').innerText = "Please enter only letters and spaces";
     }
+}
 })
 
 
@@ -228,6 +233,7 @@ reset.addEventListener('click', function(){
     }
     makeButtons();
     timer = 60;
+    document.querySelector('#timer').innerText = timer;
     clearInterval(counter);
 })
 
