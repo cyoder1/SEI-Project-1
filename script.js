@@ -206,7 +206,7 @@ reset.addEventListener('click', function(){
     missed = '';
     document.querySelector('#missed-letters').innerText = '';
     words = 1;
-    for (let j = 0 ; j<= alphabet.length ; j++){
+    for (let j = 0 ; j< alphabet.length ; j++){
     letterContainer.removeChild(letterContainer.lastElementChild);
     }
     makeButtons();
