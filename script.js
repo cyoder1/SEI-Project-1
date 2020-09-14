@@ -11,6 +11,7 @@ let wrongGuess = 0;
 let hangMan = document.querySelector('#pic');
 let subClicks = 0;
 let reset = document.querySelector('#reset-btn');
+let missed = '';
 
 let missedGuess = [``,
 `\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0==========
@@ -161,6 +162,8 @@ function changeBlank(letter) {
     } else if (gate.includes(letter) === false) {
         wrongGuess ++;
         document.querySelector('#pic').innerText = missedGuess[wrongGuess];
+        missed = missed + letter + " ";
+        document.querySelector('#missed-letters').innerText = missed;
     }
 }
 
@@ -171,5 +174,7 @@ reset.addEventListener('click', function(){
     guessWord='';
     document.querySelector('#blanks').innerText = "";
     holder = '';
+    missed = '';
+    document.querySelector('#missed-letters').innerText = '';
 })
 
