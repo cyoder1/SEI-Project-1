@@ -15,24 +15,28 @@ body {
 .pic {
     display: inline-block;
 }
-#submit-btn {
-    width: 100px
-}
-#reset-btn {
-    width: 100px
+#submit-btn, #reset-btn {
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
 }
 #user-word {
-    width: 200px;
+    width: 220px;
 }
 h1{
     text-align: center;
 }
 .display {
-    margin: auto;
+    margin: 0 auto;
     float: right;
     background-color: purple;
 }
 #input{
     display: flex;
-    
+    flex-direction: column;
+    width: 250px;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
 }
