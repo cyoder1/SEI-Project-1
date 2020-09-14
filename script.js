@@ -150,7 +150,6 @@ submitBtn.addEventListener('click', function() {
 
 function changeBlank(letter) {
     let use = letter;
-    document.querySelector(`#${letter}`).disabled = true;
     if (guessWord.includes(" ") === true) {
         words++;
         let blankPlace = (guessWord.indexOf(" "))*2;
@@ -167,6 +166,7 @@ function changeBlank(letter) {
         console.log(guessWord);
         changeBlank(use);
     } else if (guessWord.includes(letter) === true) {
+        document.querySelector(`#${letter}`).disabled = true;
         let blankPlace = (guessWord.indexOf(letter))*2;
         let letterPlace = guessWord.indexOf(letter);
         let before = holder.slice(0, (blankPlace));
