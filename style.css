@@ -1,13 +1,17 @@
 body {
     background-color: lemonchiffon;
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
 }
 
 .guess {
     width: 180px;
     text-align: center;
     float: right;
+    background-color: red;
+    align-self: flex-end;
+    
 }
 .let {
     background-color: white;
@@ -26,10 +30,11 @@ body {
 }
 h1{
     text-align: center;
+    width: 100%;
 }
 .display {
-    margin: 0 auto;
-    float: right;
+    margin: auto;
+    width: 185px;
     background-color: purple;
 }
 #input{
@@ -39,4 +44,5 @@ h1{
     display: inline-block;
     padding: 10px;
     text-align: center;
+    background-color: blue
 }
