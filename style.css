@@ -1,5 +1,7 @@
 body {
     background-color: lemonchiffon;
+    display: flex;
+    flex-direction: column;
 }
 
 .guess {
@@ -11,4 +13,16 @@ body {
 }
 .pic {
     display: inline-block;
+}
+#submit-btn {
+    width: 100px
+}
+#reset-btn {
+    width: 100px
+}
+#user-word {
+    width: 200px;
+}
+h1{
+    text-align: center;
 }
