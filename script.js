@@ -135,7 +135,7 @@ submitBtn.addEventListener('click', function() {
     for (let j = spaces; j>0 ; j--) {
         holder =holder + ('_ ');
     }
-    changeBlank();
+    changeBlank(" ");
     document.querySelector('#blanks').innerText = holder;
     document.querySelector('#user-word').value = '';
     }
