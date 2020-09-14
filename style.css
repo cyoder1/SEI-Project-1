@@ -3,6 +3,7 @@ body {
     display: flex;
     /* flex-direction: column; */
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .guess {
@@ -33,16 +34,23 @@ h1{
     width: 100%;
 }
 .display {
-    margin: auto;
+    margin: 0px 5%;
     width: 185px;
     background-color: purple;
 }
 #input{
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 33.33%;
     display: inline-block;
     padding: 10px;
     text-align: center;
     background-color: blue
+}
+#blanks {
+    text-align: center;
+}
+.guessed-letters {
+    text-align: center;
+    width: 33.33%;
 }
