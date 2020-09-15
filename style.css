@@ -4,18 +4,22 @@ body {
     /* flex-direction: column; */
     flex-wrap: wrap;
     justify-content: space-between;
+    font-family: sans-serif;
+    margin: 0px;
 }
 
 .guess {
     width: 180px;
     text-align: center;
     float: right;
-    /* background-color: red; */
+    background-color: red;
     align-self: flex-end;
     
 }
 .let {
-    background-color: white;
+    background-color: lemonchiffon;
+    border-radius: 5px;
+    font-size: 20px;
 }
 .pic {
     display: inline-block;
@@ -28,15 +32,24 @@ body {
 }
 #user-word {
     width: 220px;
+    margin: 10px 50px;
+    font-size: 20px;
 }
 h1{
     text-align: center;
     width: 100%;
+    background-color: black;
+    color: white;
+    border: 5px solid white;
+    border-radius: 5px;
+    margin: 0px;
+    padding: 0px;
 }
 .display {
     margin: 0px 5%;
     width: 185px;
-    /* background-color: purple; */
+    background-color: purple;
+    
 }
 #input{
     display: flex;
@@ -45,13 +58,26 @@ h1{
     display: inline-block;
     padding: 10px;
     text-align: center;
-    /* background-color: blue; */
+    background-color: blue;
     height: 350px;
 }
 #blanks {
     text-align: center;
 }
 .guessed-letters {
+    display:flex;
+    flex-wrap: wrap;
     text-align: center;
     width: 33.33%;
+    background-color: pink;
+    text-align: center;
+}
+#timer{
+    background-color: green;
+}
+#score {
+    background-color: orange;
+}
+.message {
+    background-color: grey;
 }
