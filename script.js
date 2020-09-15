@@ -206,6 +206,7 @@ function changeBlank(letter) {
         }
         return
     } else if (gate.includes(letter) === false) {
+        document.querySelector(`#${letter}`).disabled = true;
         if (wrongGuess < 8) {
             wrongGuess ++;
         document.querySelector('#pic').innerText = missedGuess[wrongGuess];
