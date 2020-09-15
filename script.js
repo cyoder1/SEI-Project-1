@@ -169,9 +169,6 @@ function changeBlank(letter) {
         let before = holder.slice(0, (blankPlace));
         let after = holder.slice((blankPlace+1), ((guessWord.length*2)));
         document.querySelector('.message p').innerText = words + " words";
-        console.log(blankPlace);
-        console.log(before);
-        console.log(after);
         holder = (before +  "\xa0"  + after);
         document.querySelector('#blanks').innerText = holder;
         guessWord = ((guessWord.slice(0, (letterPlace))) + "*" + (guessWord.slice((letterPlace+1), (guessWord.length))));
@@ -183,13 +180,9 @@ function changeBlank(letter) {
         let letterPlace = guessWord.indexOf(letter);
         let before = holder.slice(0, (blankPlace));
         let after = holder.slice((blankPlace+1), ((guessWord.length*2)));
-        console.log(blankPlace);
-        console.log(before);
-        console.log(after);
         holder = (before +  letter  + after);
         document.querySelector('#blanks').innerText = holder;
         guessWord = ((guessWord.slice(0, (letterPlace))) + "*" + (guessWord.slice((letterPlace+1), (guessWord.length))));
-        console.log(guessWord);
         changeBlank(use);
         if (holder.includes("_") === false) {
             document.querySelector('.message p').innerText ="YOU WON!!!";
