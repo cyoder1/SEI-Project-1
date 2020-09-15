@@ -215,8 +215,8 @@ function changeBlank(letter) {
         if (wrongGuess === 8) {
             document.querySelector('.message p').innerText =("GAME OVER! The word was: " + gate);
         }
+        }
     }
-}
 }
 
 reset.addEventListener('click', function(){
