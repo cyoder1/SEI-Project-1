@@ -160,7 +160,6 @@ submitBtn.addEventListener('click', function() {
 }
 })
 
-
 function changeBlank(letter) {
     let use = letter;
     if (guessWord.includes(" ") === true) {
