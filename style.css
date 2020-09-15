@@ -28,6 +28,7 @@ body {
 }
 .pic {
     display: inline-block;
+    text-align:center;
 }
 #submit-btn, #reset-btn, #resetScore-btn{
     width: 200px;
