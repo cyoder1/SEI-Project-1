@@ -16,7 +16,7 @@ body {
     border: 5px solid #7E7F9A;
     border-radius: 5px;
     align-self: flex-end;
-    width: 27%;
+    width: 28%;
     padding: 10px;
     margin: 5px 0px 0px 0px;
 }
@@ -71,7 +71,7 @@ h1{
     background-color: #272838;
     border: 5px solid #7E7F9A;
     border-radius: 5px;
-    height: 400px;
+    height: 500px;
     justify-content: center;
     align-items: center;
 }
