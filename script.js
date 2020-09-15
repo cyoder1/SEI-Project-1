@@ -212,7 +212,11 @@ function changeBlank(letter) {
         missed = missed + letter + " ";
         document.querySelector('#missed-letters').innerText = missed;
         if (wrongGuess === 8) {
-            document.querySelector('.message p').innerText =("GAME OVER! The word was: " + gate);
+            for (let k = 0 ; k< alphabet.length ; k++){
+                let z = alphabet[k]
+                document.querySelector(`#${z}`).disabled = true;
+                }
+                document.querySelector('.message p').innerText =("GAME OVER! The word was: " + gate);
         }
         }
     }
