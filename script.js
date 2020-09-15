@@ -213,7 +213,7 @@ function changeBlank(letter) {
         missed = missed + letter + " ";
         document.querySelector('#missed-letters').innerText = missed;
         if (wrongGuess === 8) {
-            document.querySelector('.message p').innerText ="GAME OVER";
+            document.querySelector('.message p').innerText =("GAME OVER! The word was: " + gate);
         }
     }
 }
