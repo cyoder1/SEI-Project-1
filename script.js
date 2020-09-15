@@ -149,7 +149,7 @@ submitBtn.addEventListener('click', function() {
     document.querySelector('#blanks').innerText = holder;
     document.querySelector('#user-word').value = '';
     counter = setInterval(function() {
-        if (timer > 0) {
+        if (timer >= 0) {
             document.querySelector('#timer').innerText = timer; 
             timer --;
         }
